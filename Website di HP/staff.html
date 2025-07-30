@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home | Sekolah Abal Abal</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    .header {
+      position: relative;
+      height: 300px;
+      background: url('assets/BetterHeader_BG.jpeg') center/cover no-repeat;
+      overflow: hidden;
+    }
+
+    .header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+      z-index: 1;
+    }
+
+    .header-overlay {
+      position: relative;
+      z-index: 2;
+      padding: 135px 40px 0;
+      text-align: center;
+      color: white;
+      font-size: 35px;
+    }
+
+    .navbar {
+      position: absolute;
+      top: 230px;
+      width: 100%;
+      z-index: 3;
+      background-color: transparent;
+      transition: background-color 0.3s ease;
+      padding: 10px 0;
+    }
+
+    .navbar.sticky {
+      position: fixed;
+      top: 0;
+      background-color: #004080;
+    }
+
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar ul li a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      font-size: 25px;
+      transition: transform 0.2s ease-in-out, color 0.3s ease;
+    }
+
+    .navbar ul li a:hover {
+      transform: scale(1.1);
+      color: #aed7fdd0;
+    }
+
+    .navbar ul li a.active {
+      color: #e4e593;
+      border-bottom: 2px solid #e4e593;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 100px auto 30px;
+      padding: 0 10px;
+    }
+
+    section {
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      color: #004080;
+      margin-bottom: 10px;
+    }
+
+    ul {
+      list-style: disc inside;
+      padding-left: 20px;
+    }
+
+    footer {
+      background-color: #004080;
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+      transition: transform 0.3s ease;
+      z-index: 999;
+    }
+
+    footer.hide-footer {
+      transform: translateY(100%);
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header">
+    <div class="header-overlay">
+      <h1>Akademi Tirta Bening</h1>
+    </div>
+    <nav class="navbar" id="main-navbar">
+      <ul>
+        <li><a href="Home.html" id="nav-home">Home</a></li>
+        <li><a href="about_us.html" id="nav-about">About Us</a></li>
+        <li><a href="facility.html" id="nav-facility">Facility</a></li>
+        <li><a href="staff.html" id="nav-staff">Staff</a></li>
+        <li><a href="Location.html" id="nav-Location">Location</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <main>
+    <section>
+      <h2>Sekolah Overated terbaik sejagad cleva</h2>
+      <p>
+        Sekolah kami isinya pengangguran 3 orang gak kerja 
+        pak bowo plis hlep aku butuh bantuan TwT makasihh
+      </p>
+    </section>
+
+    <section>
+      <h2>Kenapa memilih Kami (why choose us)?</h2>
+      <ul>
+        <li>Modern facilities and classrooms</li>
+        <li>Experienced and dedicated staff</li>
+        <li>Focus on academic and character development</li>
+        <li>Safe and inclusive community</li>
+        <li>Safe and inclusive community</li>
+        <li>Safe and inclusive community</li>
+        <li>Safe and inclusive community</li>
+        <li>Safe and inclusive community</li>
+        <li>Safe and inclusive community</li>
+        <li>Safe and inclusive community</li>
+        <li>Safe and inclusive community</li>
+        <li>Safe and inclusive community</li>
+        <li>Safe and inclusive community</li>
+        <li>Safe and inclusive community</li>
+        <li>Safe and inclusive community</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer id="main-footer">
+    <p>&copy; 2025 Kelompok 1</p>
+  </footer>
+
+  <script>
+    const footer = document.getElementById("main-footer");
+    let lastScrollY = window.scrollY;
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > lastScrollY) {
+        footer.classList.add("hide-footer");
+      } else {
+        footer.classList.remove("hide-footer");
+      }
+      lastScrollY = window.scrollY;
+    });
+
+    const navbar = document.getElementById("main-navbar");
+    const headerHeight = document.querySelector(".header").offsetHeight;
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY >= headerHeight) {
+        navbar.classList.add("sticky");
+      } else {
+        navbar.classList.remove("sticky");
+      }
+    });
+
+    const path = window.location.pathname.toLowerCase();
+    if (path.includes("home")) {
+      document.getElementById("nav-home")?.classList.add("active");
+    } else if (path.includes("about")) {
+      document.getElementById("nav-about")?.classList.add("active");
+    } else if (path.includes("facility")) {
+      document.getElementById("nav-facility")?.classList.add("active");
+    } else if (path.includes("staff")) {
+      document.getElementById("nav-staff")?.classList.add("active");
+    }
+  </script>
+</body>
+</html>

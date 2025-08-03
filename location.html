@@ -135,11 +135,11 @@
     </div>
     <nav class="navbar" id="main-navbar">
       <ul>
-        <li><a href="Index.html" id="nav-home">Home</a></li>
+        <li><a href="index.html" id="nav-index">Home</a></li>
         <li><a href="about_us.html" id="nav-about">About Us</a></li>
         <li><a href="facility.html" id="nav-facility">Facility</a></li>
         <li><a href="staff.html" id="nav-staff">Staff</a></li>
-        <li><a href="Location.html" id="nav-Location">Location</a></li>
+        <li><a href="location.html" id="nav-location">Location</a></li>
       </ul>
     </nav>
   </header>
@@ -177,7 +177,7 @@
 
     const path = window.location.pathname.toLowerCase();
     if (path.includes("home")) {
-      document.getElementById("nav-Index")?.classList.add("active");
+      document.getElementById("nav-index")?.classList.add("active");
     } else if (path.includes("about")) {
       document.getElementById("nav-about")?.classList.add("active");
     } else if (path.includes("facility")) {
@@ -187,4 +187,5 @@
     }
   </script>
 </body>
+
 </html>

@@ -6,44 +6,117 @@
   <title>Home | Sekolah Abal Abal</title>
   <link rel="stylesheet" href="css/style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
-<style>
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+  <style>
+    
+    * { 
+      margin: 0; 
+      padding: 0; 
+      box-sizing: border-box; 
+    }
+    body { 
+      font-family: 'Poppins', sans-serif; 
+      background-color: #f9f9f9; 
+      color: #333; 
+    }
 
-  body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #f9f9f9;
-    color: #333;
-  }
+    .header { position: relative; 
+        height: 300px; 
+        background: url('assets/BetterHeader_BG.jpeg') center/cover no-repeat; 
+        overflow: hidden; 
+      }
 
-  .header {
-    position: relative;
-    height: 300px;
-    background: url('Assets/BetterHeader_BG.jpeg') center/cover no-repeat;
-    overflow: hidden;
-  }
+    .header::before { 
+      content: ""; 
+      position: absolute; 
+      top: 0; 
+      left: 0; 
+      width: 100%; 
+      height: 100%; 
+      background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); 
+      z-index: 1; 
+    }
 
-  .header::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
-    z-index: 1;
-  }
+    .header-overlay { 
+      position: relative; 
+      z-index: 2; 
+      padding: 135px 40px 0; 
+      text-align: center; 
+      color: white; 
+      font-size: 35px; 
+    }
 
-  .header-overlay {
-    position: relative;
-    z-index: 2;
-    padding: 135px 40px 0;
-    text-align: center;
-    color: white;
-  }
+    .navbar { 
+      position: absolute; 
+      top: 230px; 
+      width: 100%; 
+      z-index: 3; 
+      background-color: transparent; 
+      transition: background-color 0.3s ease; 
+      padding: 10px 0;
+     }
+
+    .navbar.sticky { 
+      position: fixed; 
+      top: 0; 
+      background-color: #004080;
+     }
+
+    .navbar ul { 
+      list-style: none; 
+      display: flex; 
+      justify-content: center; 
+      gap: 30px; 
+    }
+    
+    .navbar ul li a { 
+      text-decoration: none;
+       color: white;
+        font-weight: bold;
+         font-size: 25px;
+          transition: transform 0.2s ease-in-out, color 0.3s ease;
+     }
+
+    .navbar ul li a:hover { 
+      transform: scale(1.1);
+       color: #aed7fdd0; 
+      }
+
+    .navbar ul li a.active { 
+      color: #e4e593; 
+      border-bottom: 2px solid #e4e593; 
+    }
+
+    main { 
+      max-width: 900px; 
+      margin: 100px auto 30px; 
+      padding: 0 10px; 
+    }
+
+    section { 
+      margin-bottom: 40px; 
+    }
+    h2 { 
+      color: #004080; 
+      margin-bottom: 10px; 
+    }
+    ul { 
+      list-style: disc inside; 
+      padding-left: 20px; 
+    }
+    footer { 
+      background-color: #004080; 
+      color: white; 
+      text-align: center; 
+      padding: 15px 0; 
+      position: fixed; 
+      width: 100%; 
+      bottom: 0; 
+      transition: transform 0.3s ease; 
+      z-index: 999; 
+    }
+    footer.hide-footer { 
+      transform: translateY(100%); 
+    }
   </style>
 </head>
 
@@ -136,4 +209,3 @@
   </script>
 </body>
 </html>
-

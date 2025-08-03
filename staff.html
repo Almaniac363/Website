@@ -135,15 +135,14 @@
     </div>
     <nav class="navbar" id="main-navbar">
       <ul>
-        <li><a href="Home.html" id="nav-home">Home</a></li>
+        <li><a href="index.html" id="nav-home">Home</a></li>
         <li><a href="about_us.html" id="nav-about">About Us</a></li>
         <li><a href="facility.html" id="nav-facility">Facility</a></li>
         <li><a href="staff.html" id="nav-staff">Staff</a></li>
-        <li><a href="Location.html" id="nav-Location">Location</a></li>
+        <li><a href="location.html" id="nav-location">Location</a></li>
       </ul>
     </nav>
   </header>
-
 
   <main>
     <section>
@@ -205,7 +204,7 @@
     });
 
     const path = window.location.pathname.toLowerCase();
-    if (path.includes("home")) {
+    if (path.includes("index")) {
       document.getElementById("nav-home")?.classList.add("active");
     } else if (path.includes("about")) {
       document.getElementById("nav-about")?.classList.add("active");
@@ -213,6 +212,8 @@
       document.getElementById("nav-facility")?.classList.add("active");
     } else if (path.includes("staff")) {
       document.getElementById("nav-staff")?.classList.add("active");
+    } else if (path.includes("location")) {
+      document.getElementById("nav-location")?.classList.add("active");
     }
   </script>
 </body>
